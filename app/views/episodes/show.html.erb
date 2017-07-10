@@ -1,0 +1,5 @@
+<h1>Episode #<%= @episode.number %> </h1>
+
+
+<p>Date: <%= @episode.date %></p>
+<p>Guests: <%= @episode.guests.nil? ? "none" : @episode.guests.map {|guest| "<a href='/guests/#{guest.id}'>#{guest.name}</a>"}.join(", ") %></p>

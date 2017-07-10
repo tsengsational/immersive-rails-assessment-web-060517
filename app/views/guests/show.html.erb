@@ -1,0 +1,13 @@
+<h1>Guest: <%= @guest.name %></h1>
+<table>
+  <tr>
+    <th>Occupation</th>
+    <th>Episodes</th>
+  </tr>
+  <tr>
+    <td><%= @guest.occupation %></td>
+    <td>
+      <%= @guest.episodes.nil? ? "none" : @guest.episodes.map {|episode| "<a href='/episodes/#{episode.id}'>#{episode.number}</a>"}.join(", ")%>
+    </td>
+  </tr>
+</table>
