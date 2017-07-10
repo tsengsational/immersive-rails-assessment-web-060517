@@ -11,3 +11,9 @@
     </td>
   </tr>
 </table>
+
+Create an Appearance
+<%= form_for :appearances do |f| %>
+  <%= f.text_field :guest_id, {value: @guest.id, type: "hidden"} %><br>
+  Episode Number: <%= f.text_field :episode_id %><br>
+<% end %>
