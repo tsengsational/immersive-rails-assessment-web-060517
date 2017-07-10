@@ -11,9 +11,10 @@
     </td>
   </tr>
 </table>
-
+<br>
 Create an Appearance
 <%= form_for :appearance, url: appearances_path do |f| %>
   <%= f.text_field :guest_id, {value: @guest.id, type: "hidden"} %><br>
-  Episode Number: <%= f.text_field :episode_id %><br>
+  Episode Number: <%= f.select :episode_id, Episode.all.collect {|episode| [episode.number, episode.id]}%><br>
+  Rating <%= f.number_field :rating %>
 <% end %>
